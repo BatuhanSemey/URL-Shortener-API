@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Задание - URL-Shortener API</h1>
+    <form action="http://localhost:5000/shorten" method="post">
+        <input type="url" name="url" placeholder="Введите url адресс...">
+        <button type="submit">Сократить url</button>
+        <a href="http://localhost:5000/<%= typeof shortCode !== 'undefined' ? shortCode : '' %>">
+            http://localhost:5000/<%= typeof shortCode !== 'undefined' ? shortCode : '' %>
+        </a>
+        <input name="result" <% if (typeof shortCode !== 'undefined') { %> value="<%= shortCode %>" <% } %> type="text" placeholder="Результат" disabled>
+    </form>
+</body>
+
+</html>
